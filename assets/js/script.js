@@ -63,3 +63,5 @@ pizzaJson.map( (item, key) => {
 	// Adiciona os elementos na area que eles serão exibidos
 	qs( '.pizza-area' ).append( pizza );
 } );
+
+// Comentário aleatório só pra poder fazer o push
