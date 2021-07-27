@@ -93,7 +93,7 @@ h1 {
     height:50px;
     line-height:50px;
     border-radius:25px;
-    background-color:#388bc5;
+    background-color:rgb(240, 20, 30);
     text-align:center;
     color:#FFF;
     font-size:22px;
@@ -102,7 +102,7 @@ h1 {
     transition:all ease .2s;
 }
 .pizza-item a:hover .pizza-item--add {
-    background-color:#244c88;
+    background-color:rgb(120, 10, 15);
 }
 .pizza-item--price {
     font-size:15px;
@@ -196,7 +196,7 @@ h1 {
     background-color:#CCC;
 }
 .pizzaInfo--size.selected {
-    background-color:#399ade;
+    background-color: rgb(240, 20, 30);
     color:#FFF;
 }
 .pizzaInfo--size.selected span {
