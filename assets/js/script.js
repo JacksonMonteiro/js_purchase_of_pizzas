@@ -3,12 +3,12 @@ const qs = ( e ) => document.querySelector( e );
 const qsa = ( e ) => document.querySelectorAll( e );
 
 // Variáveis
-let pizzaQntd ;
+let pizzaQntd;
 
 /* 
 Mapeia o JSON que contém as informações sobre as pizzas e adiciona elas na tela
 */
-pizzaJson.map( (item, key) => {
+pizzaJson.map( ( item, key ) => {
 	// Clona o elemento que contém as informações da pizza
 	let pizza = qs( '.models .pizza-item' ).cloneNode( true );
 
@@ -24,7 +24,7 @@ pizzaJson.map( (item, key) => {
 
 
 	// Abre o pop-up para usuário poder escolher como quer e pedir a pizza
-	pizza.querySelector('a').addEventListener( 'click', (e) => {
+	pizza.querySelector( 'a' ).addEventListener( 'click', ( e ) => {
 		e.preventDefault();
 
 		// Pega o ID da pizza clicada
@@ -64,4 +64,17 @@ pizzaJson.map( (item, key) => {
 	qs( '.pizza-area' ).append( pizza );
 } );
 
-// Comentário aleatório só pra poder fazer o push
+/* Eventos do Popup */
+
+// Fechar popup
+const closePopup = () => {
+	qs( '.pizzaWindowArea' ).style.opacity = 0;
+
+	setTimeout( () => {
+		qs( '.pizzaWindowArea' ).style.display = 'none';
+	}, 500 );
+}
+
+qsa( '.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton' ).forEach( ( item ) => {
+	item.addEventListener( 'click', closePopup );
+} );
