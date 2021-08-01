@@ -5,6 +5,7 @@ const qsa = ( e ) => document.querySelectorAll( e );
 // Variáveis
 let pizzaQntd;
 let cart = [];
+let selectedPizza;
 
 /* 
 Mapeia o JSON que contém as informações sobre as pizzas e adiciona elas na tela
@@ -31,6 +32,7 @@ pizzaJson.map( ( item, key ) => {
 		// Pega o ID da pizza clicada
 		let pizzaId = e.target.closest( '.pizza-item' ).getAttribute( 'data-key' );
 		pizzaQntd = 1;
+		selectedPizza = pizzaId;
 
 		// Altera as informações de pizzaWindowArea para as informações da pizza clicada de acordo com o ID
 		qs( '.pizzaBig img' ).src = pizzaJson[ pizzaId ].img;
@@ -104,5 +106,13 @@ qsa( '.pizzaInfo--size' ).forEach( ( size, sizeIndex ) => {
 
 // Funcionalidade do botão de adicionar pizzas do popup
 qs( '.pizzaInfo--addButton' ).addEventListener( 'click', () => {
-	
+	let pizzaSize = qs( '.pizzaInfo--size.selected' ).getAttribute('data-key');
+
+	cart.push({
+		id: pizzaJson[selectedPizza].id,
+		pizzaSize,
+		qt: pizzaQntd
+	})
+
+	closePopup();
 } );
