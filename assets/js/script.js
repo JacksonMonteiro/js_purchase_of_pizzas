@@ -4,6 +4,7 @@ const qsa = ( e ) => document.querySelectorAll( e );
 
 // Variáveis
 let pizzaQntd;
+let cart = [];
 
 /* 
 Mapeia o JSON que contém as informações sobre as pizzas e adiciona elas na tela
@@ -77,4 +78,31 @@ const closePopup = () => {
 
 qsa( '.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton' ).forEach( ( item ) => {
 	item.addEventListener( 'click', closePopup );
+} );
+
+// Botão de menos do popup
+qs( '.pizzaInfo--qtmenos' ).addEventListener( 'click', () => {
+	if (pizzaQntd > 1) { 
+		pizzaQntd--;
+		qs( '.pizzaInfo--qt' ).innerHTML =  pizzaQntd;	
+	}
+} );
+
+// Botão de mais do popup 
+qs( '.pizzaInfo--qtmais' ).addEventListener( 'click', () => {
+	pizzaQntd++;
+	qs( '.pizzaInfo--qt' ).innerHTML =  pizzaQntd;
+} );
+
+// Controle do tamanho de pizza escolhido
+qsa( '.pizzaInfo--size' ).forEach( ( size, sizeIndex ) => {
+	size.addEventListener( 'click', (e) => {
+		qs( '.pizzaInfo--size.selected' ).classList.remove( 'selected' );
+		size.classList.add( 'selected' );
+	} );
+} );
+
+// Funcionalidade do botão de adicionar pizzas do popup
+qs( '.pizzaInfo--addButton' ).addEventListener( 'click', () => {
+	
 } );
