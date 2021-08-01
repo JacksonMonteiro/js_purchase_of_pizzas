@@ -106,13 +106,27 @@ qsa( '.pizzaInfo--size' ).forEach( ( size, sizeIndex ) => {
 
 // Funcionalidade do botão de adicionar pizzas do popup
 qs( '.pizzaInfo--addButton' ).addEventListener( 'click', () => {
-	let pizzaSize = qs( '.pizzaInfo--size.selected' ).getAttribute('data-key');
+	let pizzaSize = Number.parseInt( qs( '.pizzaInfo--size.selected' ).getAttribute('data-key') );
 
-	cart.push({
-		id: pizzaJson[selectedPizza].id,
-		pizzaSize,
-		qt: pizzaQntd
-	})
+	// Identificador de pizza de acordo com o tamanho9
+	let identifier = pizzaJson[ selectedPizza ].id + '@' + pizzaSize;
 
+	// Checa se a pizza adicionada já existe no  carrinho
+	let key = cart.findIndex( item => item.identifier == identifier );
+
+	// Se a pizza adiciona já existir aumenta a quantidade, se não adiciona uma nova pizza
+	if ( key > -1 ) {
+		cart[ key ].qt += pizzaQntd;
+	} else {
+		// Adiciona pizza ao carrinho
+		cart.push( {
+			identifier,
+			id: pizzaJson[ selectedPizza ].id,
+			pizzaSize,
+			qt: pizzaQntd
+		});
+	}
+
+	// Fecha o popup
 	closePopup();
 } );
