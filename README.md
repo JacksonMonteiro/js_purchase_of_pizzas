@@ -5,7 +5,7 @@
   A fully dynamic and responsive pizza cart information control system! Front End only, made with pure HTML, CSS and Vanilla JavaScript! 
 </p>
 
-![GitHub](https://img.shields.io/github/license/jacksonmonteiro/ink-and-quill-text-editor?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/jacksonmonteiro/ink-and-quill-text-editor?style=flat-square)
+![GitHub](https://img.shields.io/github/license/jacksonmonteiro/purchase_of_pizzas?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/jacksonmonteiro/purchase_of_pizzas?style=flat-square)
 
 ## Content table
 	
