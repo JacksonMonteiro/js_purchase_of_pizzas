@@ -36,7 +36,7 @@
 	<sub><b>Jackson Monteiro</b></sub></a> 
  </a>
 
-Made by Jackson Monteiro. Contact us!
+Made by Jackson Monteiro. let's talk!
 
 <a href="https://www.linkedin.com/in/jackson-monteiro-716353199/" target="_blank">
 	<img src="https://img.shields.io/badge/-Jackson-blue?style=flat-square&logo=Linkedin&logoColor=white">
